@@ -70,7 +70,7 @@ def ToImg(raw_flow,bound):
     flow[flow>bound]=bound
     flow[flow<-bound]=-bound
     flow-=-bound
-    flow*=(256/float(2*bound))
+    flow*=(255/float(2*bound))
     return flow
 
 def save_flows(flows,image,save_dir,num,bound):
@@ -118,7 +118,7 @@ def python_extractor(op_method,videocapture,name,params):
             gray=np.zeros_like(frame)
             prev_gray=np.zeros_like(frame)
             prev_image=frame
-            prev_gray=cv.cvtColor(prev_image,cv.COLOR_BGR2GRAY)
+            prev_gray=cv.cvtColor(prev_image,cv.COLOR_RGB2GRAY)
             frame_num+=1
 
             step_t=params['step']
@@ -127,7 +127,7 @@ def python_extractor(op_method,videocapture,name,params):
                 step_t-=1
             continue
         image=frame
-        gray=cv.cvtColor(image,cv.COLOR_BGR2GRAY)
+        gray=cv.cvtColor(image,cv.COLOR_RGB2GRAY)
 
         frame_0=prev_gray
         frame_1=gray
