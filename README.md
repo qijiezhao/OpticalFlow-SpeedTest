@@ -1,5 +1,5 @@
 # OpticalFlow-SpeedTest
-This is a script which tests the speed of multiply optical flow extraction methods. support both single-thread and multi-thread
+This is a script that test the speed of multiple optical flow extraction methods, supporting both single-thread and multi-thread
 
 Optical flows plays a significant role in video understanding. This script helps you test multiple methods, including c++ api: [DenseFlow](https://github.com/wanglimin/dense_flow), and python api:[pydenseflow](https://github.com/qijiezhao/py-denseflow)，cpu version(farnback algorithm), gpu version(tvl1 algorithm), and single-thread, multi-thread。 Optionally, you can add other methods in code to jointly test.
 
